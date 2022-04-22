@@ -11,7 +11,7 @@ const fs = require('fs');
         let pArray = [];
         let cabeceras = document.querySelector('thead').querySelectorAll('th');
         let items = document.querySelector('tbody').querySelectorAll('tr');
-        let titulo = document.querySelector('.title').innerHTML.replace('\n                  <script type=\"text/javascript\">menuSOL.escribeLink(1715, \"\", \"\", \"\")</script>', '').trimEnd();
+        let titulo = document.querySelector('.title').innerHTML.replace('<script type=\"text/javascript\">menuSOL.escribeLink(1715, \"\", \"\", \"\")</script>', '').trimStart().trimEnd();
         let parrafo = document.querySelector('.contenido').querySelectorAll('p');
         
         parrafo.forEach((p, i) => {
@@ -37,7 +37,7 @@ const fs = require('fs');
             });
             results.push(objeto);
         })
-        return results
+        return results;
     })
 
 
